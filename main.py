@@ -36,18 +36,32 @@ def open_Characer_Info_Window ():
 
     saveButton.grid(column=0, row=3, padx=5, pady=5, columnspan=2, sticky="nwes")
 
+def character_stat_gen():
+    characterStatWindow = tk.Toplevel(root)
+
+    def character_stat_gen_save():
+        Dex.set(dexterity)
+        Int.set(intelligence)
+        Wis.set(wisdom)
+        Str.set(strength)
+        Con.set(Constitution)
+
     
 root = tk.Tk()
 root.title("DND Character Creation Tool")
 
 name = tk.StringVar(value='')
 race = tk.StringVar(value='') 
-
-nameVar = name.get()
+Dex = tk.StringVar(value= '')
+Int = tk.StringVar(value='')
+Wis = tk.StringVar(value='')
+Str = tk.StringVar(value='')
+Con = tk.StringVar(value='') 
 
 characterInfoButton = tk.Button(root, text = "Open Character Editing", command=open_Characer_Info_Window)
 
-nameLabel = tk.Label(root, text= nameVar)
+nameLabel = tk.Label(root, textvariable= name)
+raceLabel = tk.Label(root, textvariable= race)
 
 root.grid_rowconfigure(0, weight=0)
 root.grid_rowconfigure(1, weight=0)
