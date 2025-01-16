@@ -40,11 +40,38 @@ def character_stat_gen():
     characterStatWindow = tk.Toplevel(root)
 
     def character_stat_gen_save():
+        dexterity = DexEntry.get()
+        intelligence = IntEntry.get()
+        wisdom = WisEntry.get()
+        strength = StrEntry.get()
+        constitution = ConEntry.get()
+        charisma = ChaEntry.get()
+
         Dex.set(dexterity)
         Int.set(intelligence)
         Wis.set(wisdom)
         Str.set(strength)
-        Con.set(Constitution)
+        Con.set(constitution)
+        Cha.set(charisma)
+        characterStatWindow.destroy()
+
+    DexLabel = tk.Label(characterStatWindow, text= "Dexterity")
+    IntLabel = tk.Label(characterStatWindow, text= "Intelligence")
+    WisLabel = tk.Label(characterStatWindow, text= "Wisdom")
+    StrLabel = tk.Label(characterStatWindow, text= "Strength")
+    ConLabel = tk.Label(characterStatWindow, text= "Constitution")
+    ChaLabel = tk.Label(characterStatWindow, text= "Charisma")
+
+    DexEntry = tk.Entry(characterStatWindow)
+    IntEntry = tk.Entry(characterStatWindow)
+    WisEntry = tk.Entry(characterStatWindow)
+    StrEntry = tk.Entry(characterStatWindow)
+    ConEntry = tk.Entry(characterStatWindow)
+    ChaEntry = tk.Entry(characterStatWindow)
+
+    save_Button = tk.Button(characterStatWindow, text = "Save and Close", command=character_stat_gen_save)
+
+    
 
     
 root = tk.Tk()
@@ -57,6 +84,7 @@ Int = tk.StringVar(value='')
 Wis = tk.StringVar(value='')
 Str = tk.StringVar(value='')
 Con = tk.StringVar(value='') 
+Cha = tk.StringVar(value='') 
 
 characterInfoButton = tk.Button(root, text = "Open Character Editing", command=open_Characer_Info_Window)
 
