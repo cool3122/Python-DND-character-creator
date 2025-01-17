@@ -88,16 +88,16 @@ def open_character_stat_gen():
 
     rollButton = tk.Button(characterStatWindow, text = "Roll Dice", command=roll_dice)
 
-    selectStatButton = tk.Button(characterStatWindow, text = "Select Stat", command=select_stat)
+   # selectStatButton = tk.Button(characterStatWindow, text = "Select Stat", command=select_stat)
 
     saveButtonStats = tk.Button(characterStatWindow, text = "Save and Close", command=character_stat_gen_save)
 
     diceButtons = [] # Array of buttons (used for dice button generation)
 
-    statNames = ["Dexterity" , "Intelligence" , ]
+   # statNames = ["Dexterity" , "Intelligence" , ]
 
     totalLabel.grid(row=2, column=0, columnspan=3, padx=5, pady=5, sticky="nwes") # creates the totalLabel (will display the total value of the selected dice)
-    selectStatButton.grid(row=3, column=0, columnspan=3, padx=5, pady=5, sticky="nwes") # creates the selectStatButton (will apply the total value to the stat that is selected)
+   # selectStatButton.grid(row=3, column=0, columnspan=3, padx=5, pady=5, sticky="nwes") # creates the selectStatButton (will apply the total value to the stat that is selected)
     rollButton.grid(row=4, column=0, columnspan=3, padx=5, pady=5, sticky="nwes") # creates the rollButton (will change the values of the dice buttons)
     saveButtonStats.grid(row=5, column=0, columnspan=3, padx=5, pady=5, sticky="nwes") # creates the saveButtonStats (will save the stats to the stringVars which is passed down to mainloop)
 
