@@ -91,17 +91,19 @@ def open_character_stat_gen():
     def update_selection_count(change):
         nonlocal selection_count  # Access the variable from the outer scope
         selection_count += change
-
+        total = 0
         # Disable or enable buttons based on the current selection count
         if selection_count == 3:
             for i, button in enumerate(buttons):
+                total = selected_buttons_values[i] + total
                 if not selected_buttons[i]:  # Disable only unselected buttons
                     button.config(state="disabled")
-                    total = sum(selected_buttons_values)
+                    selected_buttons_values[i] = 0
             
             totalLabel.config(text = f"Total: {total}")
         else:
             for button in buttons:
+
                 button.config(state="normal")  # Re-enable all buttons
 
     def toggle_button(button_index):
