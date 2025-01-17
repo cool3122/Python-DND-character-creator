@@ -97,7 +97,8 @@ def open_character_stat_gen():
             for i, button in enumerate(buttons):
                 if not selected_buttons[i]:  # Disable only unselected buttons
                     button.config(state="disabled")
-            total = sum(selected_buttons_values)
+                    total = sum(selected_buttons_values)
+            
             totalLabel.config(text = f"Total: {total}")
         else:
             for button in buttons:
@@ -116,7 +117,7 @@ def open_character_stat_gen():
                 selected_buttons[button_index] = True
                 text_of_button = buttons[button_index].cget("text")
                 value_of_button = re.findall(r'\d+', text_of_button)
-                value = value_of_button[-1]
+                value = int(value_of_button[-1])
                 selected_buttons_values[button_index] = value
                 buttons[button_index].config(bg="lightblue")  # Change to "selected" color
                 update_selection_count(1)  # Increase the count
