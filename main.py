@@ -195,3 +195,14 @@ characterInfoButton.grid(column=0, row =3, columnspan=2, padx=5, pady=5, sticky=
 characterStatGenButton.grid(column=0, row =4, columnspan=2, padx=5, pady=5, sticky="nwes")
 
 root.mainloop()
+
+
+def create
+
+def fetchData() {
+    
+}
+
+def fetchData() {
+
+}
